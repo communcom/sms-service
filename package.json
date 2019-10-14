@@ -1,0 +1,47 @@
+{
+  "name": "sms-service",
+  "version": "0.1.0",
+  "description": "**SMS-SERVICE** является сервисом работы с SMS-сообщениями для сайта и приложений [golos.io](https://golos.io).",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GolosChain/sms-service.git"
+  },
+  "author": "golos.io",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/GolosChain/sms-service/issues"
+  },
+  "homepage": "https://github.com/GolosChain/sms-service#readme",
+  "dependencies": {
+    "gls-core-service": "^2.16.1",
+    "jayson": "^2.1.1",
+    "micro": "^9.3.3",
+    "ramda": "^0.26.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "twilio": "^3.26.1",
+    "urlencoded-body-parser": "^2.0.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 4,
+    "semi": true,
+    "trailingComma": "es5",
+    "printWidth": 100,
+    "overrides": [
+      {
+        "files": [
+          "*.yml",
+          "*.json"
+        ],
+        "options": {
+          "tabWidth": 2
+        }
+      }
+    ]
+  }
+}
