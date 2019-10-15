@@ -1,23 +1,17 @@
 {
   "name": "sms-service",
-  "version": "0.1.0",
-  "description": "**SMS-SERVICE** является сервисом работы с SMS-сообщениями для сайта и приложений [golos.io](https://golos.io).",
+  "version": "1.0.1",
+  "description": "Commun SMS service",
   "main": "./src/index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GolosChain/sms-service.git"
-  },
-  "author": "golos.io",
+  "author": "commun.com",
   "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/GolosChain/sms-service/issues"
-  },
-  "homepage": "https://github.com/GolosChain/sms-service#readme",
   "dependencies": {
-    "gls-core-service": "^2.16.1",
+    "cyberway-core-service": "^3.53.0",
+    "dotenv": "^8.1.0",
     "jayson": "^2.1.1",
     "micro": "^9.3.3",
     "ramda": "^0.26.1",
