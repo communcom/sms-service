@@ -1,25 +1,33 @@
-const core = require('gls-core-service');
+const core = require('cyberway-core-service');
 const BasicConnector = core.services.Connector;
-const Send = require('../controllers/Send');
-const Registration = require('../controllers/Registration');
-const env = require('../data/env');
+
+const SmsGate = require('../controllers/SmsGate');
 
 class Connector extends BasicConnector {
-    constructor({ smsGate, smsSecondCheck }) {
+    constructor() {
         super();
 
-        this._sendController = new Send({ smsGate, connector: this });
-
-        new Registration({ smsGate, smsSecondCheck, connector: this });
+        this._smsGate = new SmsGate({ connector: this });
     }
 
     async start() {
         await super.start({
             serverRoutes: {
-                plainSms: this._sendController.sendPlainSms.bind(this._sendController),
-            },
-            requiredClients: {
-                registration: env.GLS_REGISTRATION_CONNECT,
+                plainSms: {
+                    handler: this._smsGate.sendSms,
+                    scope: this._smsGate,
+                    validation: {
+                        required: ['phone', 'message'],
+                        properties: {
+                            phone: {
+                                type: 'string',
+                            },
+                            message: {
+                                type: 'string',
+                            },
+                        },
+                    },
+                },
             },
         });
     }
