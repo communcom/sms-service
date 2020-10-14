@@ -2,13 +2,11 @@
   "name": "sms-service",
   "version": "1.0.1",
   "description": "Commun SMS service",
-  "main": "./src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "author": "commun.com",
-  "license": "GPL-3.0",
+  "license": "MTT",
   "dependencies": {
     "cyberway-core-service": "^3.53.0",
     "dotenv": "^8.1.0",
